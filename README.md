@@ -30,10 +30,17 @@ Object type allowed fields
 
 ### Input
 
+**Map**:
+
 ```json
 {
   "rooms": [
-    { "id": 1, "name": "Hallway", "north": 2, "objects": [] },
+    {
+      "id": 1,
+      "name": "Hallway",
+      "north": 2,
+      "objects": []
+    },
     {
       "id": 2,
       "name": "Dining Room",
@@ -66,9 +73,9 @@ Object type allowed fields
 }
 ```
 
-Input Start Room ID= 2
+**Input Start Room ID** = 2
 
-Input Objects To Collect= Knife, Potted Plant
+**Input Objects To Collect** = Knife, Potted Plant
 
 ### Output
 
@@ -85,10 +92,18 @@ Input Objects To Collect= Knife, Potted Plant
 
 ### Input
 
+**Map**:
+
 ```json
 {
   "rooms": [
-    { "id": 1, "name": "Hallway", "north": 2, "east": 7, "objects": [] },
+    {
+      "id": 1,
+      "name": "Hallway",
+      "north": 2,
+      "east": 7,
+      "objects": []
+    },
     {
       "id": 2,
       "name": "Dining Room",
@@ -98,7 +113,12 @@ Input Objects To Collect= Knife, Potted Plant
       "east": 4,
       "objects": []
     },
-    { "id": 3, "name": "Kitchen", "east": 2, "objects": [{ "name": "Knife" }] },
+    {
+      "id": 3,
+      "name": "Kitchen",
+      "east": 2,
+      "objects": [{ "name": "Knife" }]
+    },
     {
       "id": 4,
       "name": "Sun Room",
@@ -114,7 +134,13 @@ Input Objects To Collect= Knife, Potted Plant
       "east": 6,
       "objects": [{ "name": "Pillow" }]
     },
-    { "id": 6, "name": "Bathroom", "west": 5, "south": 4, "objects": [] },
+    {
+      "id": 6,
+      "name": "Bathroom",
+      "west": 5,
+      "south": 4,
+      "objects": []
+    },
     {
       "id": 7,
       "name": "Living room",
@@ -126,9 +152,9 @@ Input Objects To Collect= Knife, Potted Plant
 }
 ```
 
-Input Start Room ID = 4
+**Input Start Room ID** = 4
 
-Input Objects To Collect= Knife, Potted Plant, Pillow
+**Input Objects To Collect** = Knife, Potted Plant, Pillow
 
 ### Output
 
@@ -158,3 +184,7 @@ docker run -v $(pwd):/mmt -p 9090:9090 -w /mnt mytest ./scripts/tests.sh
 docker run -v $(pwd):/mnt -p 9090:9090 -w /mnt mytest ./scripts/run.sh
 
 ```
+
+## Docs
+
+[Activity Diagram](amaze_app/doc/amaze_flow.md)
