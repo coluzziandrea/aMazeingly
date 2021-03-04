@@ -187,4 +187,6 @@ docker run -v $(pwd):/mnt -p 9090:9090 -w /mnt mytest ./scripts/run.sh
 
 ## Docs
 
-[Activity Diagram](amaze_app/doc/amaze_flow.md)
+### Activity Diagram
+
+![Activity Diagram](amaze_app/doc/amaze_flow.png)
