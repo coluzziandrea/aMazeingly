@@ -1,0 +1,22 @@
+graph TD
+    A[Start] --> B[index rooms in the map object by their IDs ];
+    B --> C[init array alreadyVisitedRoomIDs]
+    C --> G[init array result]
+    G --> D[set currentRoom = startRoom ]
+    D --> E[add currentRoom's ID to alreadyVisitedRoomIDs]    
+    E --> F[Collect target objects from the current room and add element to the result array]
+    F --> I{currentRoom has north?}
+    I -->|Yes| J[currentRoom = north]
+    J --> E
+    I -->|No| K{currentRoom has south?}
+    K -->|Yes| L[currentRoom = south]
+    L --> E
+    K -->|No| M{currentRoom has west?}
+    M -->|Yes| N[currentRoom = west]
+    N --> E
+    M -->|No| O{currentRoom has east?}
+    O -->|Yes| P[currentRoom = east]
+    P --> E
+    O -->|No| Q[Print Result]
+    Q --> Z[End]
+

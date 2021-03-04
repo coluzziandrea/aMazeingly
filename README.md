@@ -180,13 +180,22 @@ To Start the demo:
 
 docker build -t mytest .
 docker run -v $(pwd):/mnt -p 9090:9090 -w /mnt mytest ./scripts/build.sh
-docker run -v $(pwd):/mmt -p 9090:9090 -w /mnt mytest ./scripts/tests.sh
+docker run -v $(pwd):/mnt -p 9090:9090 -w /mnt mytest ./scripts/tests.sh
 docker run -v $(pwd):/mnt -p 9090:9090 -w /mnt mytest ./scripts/run.sh
 
+```
+
+If you are on Windows:
+
+```powershell
+docker build -t mytest .
+docker run -v ${PWD}:/mnt -p 9090:9090 -w /mnt mytest ./scripts/build.sh
+docker run -v ${PWD}:/mnt -p 9090:9090 -w /mnt mytest ./scripts/tests.sh
+docker run -v ${PWD}:/mnt -p 9090:9090 -w /mnt mytest ./scripts/run.sh
 ```
 
 ## Docs
 
 ### Activity Diagram
 
-![Activity Diagram](amaze_app/doc/amaze_flow.png)
+![Activity Diagram](doc/amaze_flow.svg)
