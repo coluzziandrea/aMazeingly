@@ -185,7 +185,7 @@ docker run -v $(pwd):/mnt -p 9090:9090 -w /mnt mytest ./scripts/run.sh
 
 ```
 
-If you are on Windows:
+If you are on Windows (Powershell):
 
 ```powershell
 docker build -t mytest .

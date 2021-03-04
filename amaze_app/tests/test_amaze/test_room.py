@@ -2,7 +2,7 @@ import pathlib
 import pytest
 
 
-from amaze_app.amaze.room import Room
+from amaze.room import Room
 
 
 def test_init():
