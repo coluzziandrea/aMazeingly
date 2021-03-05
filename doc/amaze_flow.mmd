@@ -2,21 +2,15 @@ graph TD
     A[Start] --> B[index rooms in the map object by their IDs ];
     B --> C[init array alreadyVisitedRoomIDs]
     C --> G[init array result]
-    G --> D[set currentRoom = startRoom ]
+    G --> R[init FIFO queue roomsToVisit, add start room ID to roomsToVisit]
+    R --> D[set currentRoom = head of roomsToVisit ]
     D --> E[add currentRoom's ID to alreadyVisitedRoomIDs]    
     E --> F[Collect target objects from the current room and add element to the result array]
-    F --> I{currentRoom has north?}
-    I -->|Yes| J[currentRoom = north]
+    F --> I{currentRoom has connectedRooms?}
+    I -->|Yes| J[Search for connected rooms ID that do not compare in alreadyVisitedRoomIDs and add them to roomsToVisit]
     J --> E
-    I -->|No| K{currentRoom has south?}
-    K -->|Yes| L[currentRoom = south]
-    L --> E
-    K -->|No| M{currentRoom has west?}
-    M -->|Yes| N[currentRoom = west]
-    N --> E
-    M -->|No| O{currentRoom has east?}
-    O -->|Yes| P[currentRoom = east]
-    P --> E
-    O -->|No| Q[Print Result]
+    I -->|No| K{roomsToVisit is empty?}
+    K -->|Yes| Q[Print Result]
+    K -->|No| D
     Q --> Z[End]
 
