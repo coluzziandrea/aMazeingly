@@ -193,9 +193,3 @@ docker run -v ${PWD}:/mnt -p 9090:9090 -w /mnt mytest ./scripts/build.sh
 docker run -v ${PWD}:/mnt -p 9090:9090 -w /mnt mytest ./scripts/tests.sh
 docker run -v ${PWD}:/mnt -p 9090:9090 -w /mnt mytest ./scripts/run.sh
 ```
-
-## Docs
-
-### Activity Diagram
-
-![Activity Diagram](doc/amaze_flow.svg)
