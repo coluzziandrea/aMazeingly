@@ -2,6 +2,7 @@ import pytest
 
 
 from amaze.room import Room
+from amaze.room_result import RoomResult
 
 
 def test_init():
@@ -57,4 +58,38 @@ def test_visit():
     room = Room(1, "Foo Room")
     room.addObject("Foo Object")
 
-    already_visited = set(2, 3, 4)
+    room_res = RoomResult(["Foo Object", "Test Object"])
+
+    room.visit(room_res)
+
+    exp_res = RoomResult(["Foo Object", "Test Object"])
+    exp_res.addVisitedRoom(1, "Foo Room", "Foo Object")
+
+    assert room_res == exp_res
+    assert room_res.isRoomVisited(room.id)
+
+
+def test_has_rooms_to_visit():
+
+    room = Room(1, "Foo Room")
+
+    room.north = 4
+    room.south = 5
+
+    result = RoomResult(["Foo Object"])
+
+    result.addVisitedRoom(4, "Foo Room")
+
+    assert room.hasRoomsToVisit(result)
+
+    assert room.hasSouthToVisit(result)
+    assert not room.hasNorthToVisit(result)
+    assert not room.hasEastToVisit(result)
+    assert not room.hasWestToVisit(result)
+
+    result.addVisitedRoom(5, "Test Room")
+
+    assert not room.hasSouthToVisit(result)
+    assert not room.hasNorthToVisit(result)
+    assert not room.hasEastToVisit(result)
+    assert not room.hasWestToVisit(result)

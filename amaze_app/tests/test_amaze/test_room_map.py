@@ -23,9 +23,9 @@ def input_rooms_1():
 
 
 def testdata_1():
-    exp_result = RoomResult()
-    exp_result.addVisitedRoom(1, "Foo Room", [])
-    exp_result.addVisitedRoom(2, "Test Room", ["Test Obj"])
+    exp_result = RoomResult(["Test Obj"])
+    exp_result.addVisitedRoom(1, "Foo Room")
+    exp_result.addVisitedRoom(2, "Test Room", "Test Obj")
     return (input_rooms_1(), 1, ["Test Obj"], exp_result)
 
 
@@ -56,13 +56,13 @@ def input_rooms_2():
 
 
 def testdata_2():
-    exp_result = RoomResult()
-    exp_result.addVisitedRoom(2, "Dining Room", [])
-    exp_result.addVisitedRoom(1, "Hallway", [])
-    exp_result.addVisitedRoom(2, "Dining Room", [])
-    exp_result.addVisitedRoom(3, "Kitchen", ["Knife"])
-    exp_result.addVisitedRoom(2, "Dining Room", [])
-    exp_result.addVisitedRoom(4, "Sun Room", ["Potted Plant"])
+    exp_result = RoomResult(["Knife", "Potted Plant"])
+    exp_result.addVisitedRoom(2, "Dining Room")
+    exp_result.addVisitedRoom(1, "Hallway")
+    exp_result.addVisitedRoom(2, "Dining Room")
+    exp_result.addVisitedRoom(3, "Kitchen", "Knife")
+    exp_result.addVisitedRoom(2, "Dining Room")
+    exp_result.addVisitedRoom(4, "Sun Room", "Potted Plant")
     return (input_rooms_2(), 2, ["Knife", "Potted Plant"], exp_result)
 
 
